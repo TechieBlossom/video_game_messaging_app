@@ -1,16 +1,20 @@
-# vide_game_series_app
+# video_game_messaging_app
 
-A new Flutter project.
+Flight Tickets UI Mock from Dribble
 
-## Getting Started
+Created a demo for Video Game Message App in Flutter where you can see the custom and unique background of the application and also the tabs in vertical using Transformations on Text with Transitions and Material Shapes.
 
-This project is a starting point for a Flutter application.
+Started this project as a design mock up for Video Game Message Bpard App | https://dribbble.com/shots/6193167-Video-Game-Message-Board-App
 
-A few resources to get you started if this is your first Flutter project:
+*This project uses Dart 2*
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+## Video Series
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+**Part 1-** https://youtu.be/2E-n0WWooGs Created Vertical Tabs and An awesome Custom Background
+
+**Part 2-** https://youtu.be/SyrmtnYGJyI Demonstrated Material Shape, Cool transitions and Animated Text Styles
+
+## Screenshots
+<table style={border:"none"}><tr><td><img src="https://github.com/TechieBlossom/video_game_messaging_app/blob/master/screenshots/part1.png" alt="Landing Page(Vertical Tabs and Background)"/></td><td><img src="https://github.com/TechieBlossom/video_game_messaging_app/blob/master/screenshots/part2.png" alt="Landing Page(Transition, Card, Material Shape)"/></td></tr></table>
+
+This project is still in progress as on 04-04-2019.
