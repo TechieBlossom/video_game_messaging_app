@@ -26,7 +26,7 @@ final TextStyle rankStyle = TextStyle(
   color: primaryColor,
 );
 final TextStyle selectedTabStyle = TextStyle(
-  fontSize: 20.0,
+  fontSize: 22.0,
   color: Colors.black,
   fontWeight: FontWeight.bold,
 );
@@ -49,4 +49,9 @@ final TextStyle buttonStyle = TextStyle(
   fontSize: 30.0,
   color: Colors.white,
   fontWeight: FontWeight.bold,
+);
+final TextStyle forumNameTextStyle = TextStyle(
+  color: Colors.white,
+  fontSize: 22.0,
+  fontWeight: FontWeight.w800,
 );

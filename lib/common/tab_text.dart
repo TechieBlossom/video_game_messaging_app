@@ -14,9 +14,12 @@ class TabText extends StatelessWidget {
       angle: -1.58,
       child: InkWell(
         onTap: onTabTap,
-        child: Text(
-          text,
+        child: AnimatedDefaultTextStyle(
           style: isSelected ? selectedTabStyle : defaultTabStyle,
+          duration: const Duration(milliseconds: 500),
+          child: Text(
+            text,
+          ),
         ),
       ),
     );
