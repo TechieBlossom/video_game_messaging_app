@@ -12,7 +12,7 @@ Started this project as a design mock up for Video Game Message Bpard App | http
 
 **Part 1-** https://youtu.be/2E-n0WWooGs Created Vertical Tabs and An awesome Custom Background
 
-**Part 2-** https://youtu.be/VcBPpfbIcA4 Demonstrated Material Shape, Cool transitions and Animated Text Styles
+**Part 2-** https://youtu.be/0zevQA26a-8 Demonstrated Material Shape, Cool transitions and Animated Text Styles
 
 ## Screenshots
 <table style={border:"none"}><tr><td><img src="https://github.com/TechieBlossom/video_game_messaging_app/blob/master/screenshots/part1.png" alt="Landing Page(Vertical Tabs and Background)"/></td><td><img src="https://github.com/TechieBlossom/video_game_messaging_app/blob/master/screenshots/part2.png" alt="Landing Page(Transition, Card, Material Shape)"/></td></tr></table>
