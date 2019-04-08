@@ -36,12 +36,12 @@ class _HorizontalTabLayoutState extends State<HorizontalTabLayout>
       child: Stack(
         children: <Widget>[
           Positioned(
-            left: -20,
+            left: -30,
             bottom: 0,
             top: 0,
             width: 110.0,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 80.0),
+              padding: const EdgeInsets.symmetric(vertical: 80.0,),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -98,21 +98,13 @@ class _HorizontalTabLayoutState extends State<HorizontalTabLayout>
       [
         ForumCard(forum: fortniteForum),
         ForumCard(forum: pubgForum),
-        ForumCard(forum: fortniteForum),
+      ],
+      [
         ForumCard(forum: pubgForum),
+        ForumCard(forum: fortniteForum),
       ],
       [
         ForumCard(forum: fortniteForum),
-        ForumCard(forum: fortniteForum),
-        ForumCard(forum: fortniteForum),
-        ForumCard(forum: pubgForum)
-      ],
-      [
-        ForumCard(forum: fortniteForum),
-        ForumCard(forum: pubgForum),
-        ForumCard(forum: fortniteForum),
-        ForumCard(forum: pubgForum),
-        ForumCard(forum: pubgForum),
         ForumCard(forum: pubgForum),
       ]
     ][index];
