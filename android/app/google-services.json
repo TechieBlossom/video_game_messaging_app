@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "375519573423",
+    "firebase_url": "https://flutter-video-game-message-app.firebaseio.com",
+    "project_id": "flutter-video-game-message-app",
+    "storage_bucket": "flutter-video-game-message-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375519573423:android:b00b8471d04405af",
+        "android_client_info": {
+          "package_name": "com.techieblossom.vide_game_series_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375519573423-jljm6lnllqie09u1a69htsomdb1kjls3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmU-cAzWGAlC6cVwnyHEC4SAwZpAvQrtw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375519573423-jljm6lnllqie09u1a69htsomdb1kjls3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "375519573423-td9j7hjbsbq2okqrplata1ec91u3vbt5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.techieblossom.videGameSeriesApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

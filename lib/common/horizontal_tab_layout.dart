@@ -1,9 +1,15 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:video_game_message_board_app/api/firebase_service.dart';
 import 'package:video_game_message_board_app/common/forum_card.dart';
 import 'package:video_game_message_board_app/common/tab_text.dart';
 import 'package:video_game_message_board_app/model/forum.dart';
 
 class HorizontalTabLayout extends StatefulWidget {
+  final FirebaseService firebaseService;
+
+  HorizontalTabLayout({this.firebaseService});
+
   @override
   _HorizontalTabLayoutState createState() => _HorizontalTabLayoutState();
 }
@@ -20,7 +26,9 @@ class _HorizontalTabLayoutState extends State<HorizontalTabLayout>
     super.initState();
     _controller = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 1000));
-    _animation = Tween<Offset>(begin: Offset(0,0), end: Offset(-0.05,0)).animate(_controller);
+    _animation =
+        Tween<Offset>(begin: Offset(0, 0), end: Offset(-0.05, 0)).animate(
+            _controller);
     _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller);
   }
 
@@ -79,9 +87,21 @@ class _HorizontalTabLayoutState extends State<HorizontalTabLayout>
                   opacity: _fadeAnimation,
                   child: SlideTransition(
                     position: _animation,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: getList(selectedTabIndex),
+                    child: StreamBuilder(
+                      stream: widget.firebaseService.getList(getTypeByIndex(selectedTabIndex)),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<QuerySnapshot> asyncSnapshot) {
+                        if (asyncSnapshot.hasError) {
+                          return Center(child: Text("Error..."));
+                        }
+
+                        switch (asyncSnapshot.connectionState) {
+                          case ConnectionState.waiting:
+                            return Center(child: CircularProgressIndicator());
+                          default:
+                            return _buildList(context, asyncSnapshot.data.documents);
+                        }
+                      },
                     ),
                   ),
                 );
@@ -93,21 +113,24 @@ class _HorizontalTabLayoutState extends State<HorizontalTabLayout>
     );
   }
 
-  List<Widget> getList(index) {
-    return [
-      [
-        ForumCard(forum: fortniteForum),
-        ForumCard(forum: pubgForum),
-      ],
-      [
-        ForumCard(forum: pubgForum),
-        ForumCard(forum: fortniteForum),
-      ],
-      [
-        ForumCard(forum: fortniteForum),
-        ForumCard(forum: pubgForum),
-      ]
-    ][index];
+  String getTypeByIndex(int index) {
+    switch (index) {
+      case 0: return "Media";
+      case 1: return "Streamers";
+      case 2: return "Forum";
+      default: return "Forum";
+    }
+  }
+
+  Widget _buildList(context, List<DocumentSnapshot> snapshots) {
+    return ListView.builder(
+        itemCount: snapshots.length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, int index) {
+          return ForumCard(
+            forum: Forum.fromSnapshot(snapshots[index]),
+          );
+        });
   }
 
   onTabTap(int index) {

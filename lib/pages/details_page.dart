@@ -60,11 +60,16 @@ class _DetailsPageState extends State<DetailsPage>
               SizedBox(
                 height: 60.0,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
+              InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                  ),
                 ),
               ),
               SizedBox(
@@ -138,12 +143,12 @@ class _DetailsPageState extends State<DetailsPage>
                       Expanded(
                         child: SlideTransition(
                           position: _offsetAnimation,
-                          child: ListView(
+                          child: ListView.builder(
+                            itemCount: widget.forum.topics.length,
+                            itemBuilder: (context, index) {
+                              return TopicsTile(topic: widget.forum.topics[index]);
+                            },
                             shrinkWrap: true,
-                            children: <Widget>[
-                              TopicsTile(topic: widget.forum.topics[0]),
-                              TopicsTile(topic: widget.forum.topics[1])
-                            ],
                           ),
                         ),
                       )
@@ -188,6 +193,7 @@ class TopicsTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Row(
             mainAxisSize: MainAxisSize.max,
