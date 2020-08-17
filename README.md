@@ -1,6 +1,6 @@
 # video_game_messaging_app
 
-Flight Tickets UI Mock from Dribble
+Video Game Messaging UI Mock from Dribble
 
 Created a demo for Video Game Message App in Flutter where you can see the custom and unique background of the application and also the tabs in vertical using Transformations on Text with Transitions and Material Shapes.
 
